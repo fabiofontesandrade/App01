@@ -18,7 +18,7 @@ namespace App01_ConsultarCep
         }
 
         private void BuscarCEP(object sender, EventArgs args)
-        {
+        { 
             //TODO - lógica do app
             //TODO - validações
             string cep = txtCEP.Text.Trim();
