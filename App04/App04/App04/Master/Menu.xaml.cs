@@ -19,11 +19,13 @@ namespace App04.Master
 
         private void GoPagePerfil1(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Pages.Perfil1());
+            Detail = new NavigationPage(new Pages.Perfil1());
+            IsPresented = false;
         }
         private void GoPageXamarin(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Pages.Xamarin());
+            Detail = new NavigationPage(new Pages.Xamarin());
+            IsPresented = false;
         }
     }
 }
