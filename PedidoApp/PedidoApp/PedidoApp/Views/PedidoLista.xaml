@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="PedidoApp.Views.PedidoLista"
+             Title="Relação de Pedidos">
+    <StackLayout>
+        <Button Text="Novo Pedido" FontAttributes="Bold"
+                CornerRadius="0" HeightRequest="40" BorderColor="Black" BackgroundColor="#69b069"
+                BorderWidth="1" TextColor="White" Command="{Binding AddCommand}"/>
+        <ListView x:Name="ListViewPedidos" HasUnevenRows="True" SeparatorColor="Azure"
+                  ItemsSource="{Binding PedidoLista}" SelectedItem="{Binding SelectedPedidoItem, Mode=TwoWay}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical">
+                            <Label Text="{Binding Titulo}" FontSize="15" TextColor="Black" />
+                            <Label Text="{Binding Preco, Converter={StaticResource currencyConverter}}"
+                                   FontSize="15" HorizontalOptions="EndAndExpand" TextColor="Black" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>            
+        </ListView>
+        <Button Text="Deletar todos os pedidos" CornerRadius="0" VerticalOptions="EndAndExpand" FontAttributes="Bold"
+                TextColor="White" BackgroundColor="#f6546a" Command="{Binding DeleteAllPedidosCommand}" />
+    </StackLayout>
+</ContentPage>
