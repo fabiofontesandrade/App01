@@ -4,12 +4,18 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="PedidoApp.Views.AddPedido">
+             x:Class="PedidoApp.Views.AddPedido"
+             Title="Incluir Novo Pedido">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="btnSubmit" Command="{Binding AddPedidoCommand}" CornerRadius="0" Text="Salvar Pedido"
+                    FontAttributes="Bold" TextColor="White" BackgroundColor="#69b069" />
+            <Label x:Name="lblView" Text="Ver todos os Pedidos" IsVisible="{Binding IsViewAll}" TextColor="Blue"
+                   BackgroundColor="Aqua" HorizontalOptions="EndAndExpand" FontSize="15">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding ViewAllPedidosCommand}" NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

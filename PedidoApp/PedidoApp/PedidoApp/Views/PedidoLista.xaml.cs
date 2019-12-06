@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using PedidoApp.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +11,11 @@ namespace PedidoApp.Views
         public PedidoLista()
         {
             InitializeComponent();
+        }
+
+        protected override void OnAppearing()
+        {
+            this.BindingContext = new PedidoListaViewModel();
         }
     }
 }

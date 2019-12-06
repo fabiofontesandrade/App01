@@ -3,13 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:PedidoApp.Views"
              mc:Ignorable="d"
-             x:Class="PedidoApp.Views.DetailsPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="PedidoApp.Views.DetailsPage"
+             Title="Detalhes do Pedido">
+    <StackLayout Padding="10" Spacing="5">
+        <local:PedidoView />
+        <Button Text="Atualizar" CornerRadius="0" Margin="0, 30, 0, 0" FontAttributes="Bold" TextColor="White"
+                BackgroundColor="#598985" Command="{Binding UpdatePedidoCommand}" />
+        <Button Text="Deletar" CornerRadius="0" Margin="0, 30, 0, 0" FontAttributes="Bold" TextColor="White"
+                BackgroundColor="#f6546a" Command="{Binding DeletePedidoCommand}" />
+    </StackLayout>
 </ContentPage>

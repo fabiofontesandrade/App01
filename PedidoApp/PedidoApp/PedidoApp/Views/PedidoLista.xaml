@@ -22,7 +22,7 @@
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>
-            </ListView.ItemTemplate>            
+            </ListView.ItemTemplate>
         </ListView>
         <Button Text="Deletar todos os pedidos" CornerRadius="0" VerticalOptions="EndAndExpand" FontAttributes="Bold"
                 TextColor="White" BackgroundColor="#f6546a" Command="{Binding DeleteAllPedidosCommand}" />
